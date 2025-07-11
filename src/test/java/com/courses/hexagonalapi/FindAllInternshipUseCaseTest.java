@@ -1,0 +1,44 @@
+package com.courses.hexagonalapi;
+
+
+import com.courses.hexagonalapi.internship.domain.FindAllInternshipUseCase;
+import com.courses.hexagonalapi.internship.domain.Internship;
+import com.courses.hexagonalapi.internship.domain.InternshipRepositoryFetcher;
+import com.courses.hexagonalapi.internship.domain.InternshipStatus;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+class FindAllInternshipUseCaseTest {
+
+    private final InternshipRepositoryFetcher repositoryFetcher = mock(InternshipRepositoryFetcher.class);
+    private final FindAllInternshipUseCase useCase = new FindAllInternshipUseCase(repositoryFetcher);
+
+    @Test
+    void shouldReturnListOfInternships() {
+        // given
+        Internship internship1 = new Internship(
+                UUID.randomUUID(), "Stage A", LocalDate.of(2025, 9, 1), LocalDate.of(2025, 12, 1), InternshipStatus.SUBMITTED
+        );
+        Internship internship2 = new Internship(
+                UUID.randomUUID(), "Stage B", LocalDate.of(2025, 10, 1), LocalDate.of(2026, 1, 15), InternshipStatus.SUBMITTED
+        );
+
+        List<Internship> mockList = List.of(internship1, internship2);
+        when(repositoryFetcher.findAll()).thenReturn(mockList);
+
+        // when
+        List<Internship> result = useCase.findAll();
+
+        // then
+        assertNotNull(result);
+        assertEquals(2, result.size());
+        assertEquals(mockList, result);
+        verify(repositoryFetcher, times(1)).findAll();
+    }
+}
