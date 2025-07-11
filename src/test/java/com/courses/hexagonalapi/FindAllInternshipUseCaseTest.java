@@ -1,6 +1,7 @@
 package com.courses.hexagonalapi;
 
-
+import com.courses.hexagonalapi.core.BusinessException;
+import com.courses.hexagonalapi.internship.domain.ErrorInternshipCode;
 import com.courses.hexagonalapi.internship.domain.FindAllInternshipUseCase;
 import com.courses.hexagonalapi.internship.domain.Internship;
 import com.courses.hexagonalapi.internship.domain.InternshipRepositoryFetcher;
@@ -21,24 +22,40 @@ class FindAllInternshipUseCaseTest {
 
     @Test
     void shouldReturnListOfInternships() {
-        // given
         Internship internship1 = new Internship(
-                UUID.randomUUID(), "Stage A", LocalDate.of(2025, 9, 1), LocalDate.of(2025, 12, 1), InternshipStatus.SUBMITTED
+                UUID.randomUUID(),
+                "Stage A",
+                LocalDate.of(2025, 9, 1),
+                LocalDate.of(2025, 12, 1),
+                InternshipStatus.SUBMITTED
         );
+
         Internship internship2 = new Internship(
-                UUID.randomUUID(), "Stage B", LocalDate.of(2025, 10, 1), LocalDate.of(2026, 1, 15), InternshipStatus.SUBMITTED
+                UUID.randomUUID(),
+                "Stage B",
+                LocalDate.of(2025, 10, 1),
+                LocalDate.of(2026, 1, 15),
+                InternshipStatus.SUBMITTED
         );
 
         List<Internship> mockList = List.of(internship1, internship2);
         when(repositoryFetcher.findAll()).thenReturn(mockList);
 
-        // when
         List<Internship> result = useCase.findAll();
 
-        // then
         assertNotNull(result);
         assertEquals(2, result.size());
         assertEquals(mockList, result);
+        verify(repositoryFetcher, times(1)).findAll();
+    }
+
+    @Test
+    void shouldThrowWhenNoInternshipsFound() {
+         when(repositoryFetcher.findAll()).thenReturn(List.of());
+
+         BusinessException exception = assertThrows(BusinessException.class, () -> useCase.findAll());
+        assertEquals(ErrorInternshipCode.INTERNSHIP_NOT_FOUND, exception.getErrorCode());
+        assertEquals("Aucun stage trouvé", exception.getMessage());
         verify(repositoryFetcher, times(1)).findAll();
     }
 }

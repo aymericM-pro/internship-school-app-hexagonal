@@ -1,5 +1,7 @@
 package com.courses.hexagonalapi.internship.domain;
 
+import com.courses.hexagonalapi.core.BusinessException;
+
 import java.util.List;
 
 public class FindAllInternshipUseCase {
@@ -11,6 +13,12 @@ public class FindAllInternshipUseCase {
     }
 
     public List<Internship> findAll() {
-        return this.internshipRepositoryFetcher.findAll();
+        List<Internship> internships = internshipRepositoryFetcher.findAll();
+
+        if (internships.isEmpty()) {
+            throw new BusinessException(ErrorInternshipCode.INTERNSHIP_NOT_FOUND, "Aucun stage trouvé");
+        }
+
+        return internships;
     }
 }
