@@ -1,7 +1,6 @@
 package com.courses.hexagonalapi.internship.bootstrap;
 
-import com.courses.hexagonalapi.internship.domain.defenses.DefenseRepositorySaver;
-import com.courses.hexagonalapi.internship.domain.defenses.SubmitDefenseUseCase;
+import com.courses.hexagonalapi.internship.domain.defenses.*;
 import com.courses.hexagonalapi.internship.domain.internships.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,5 +28,15 @@ public class DomainConfiguration {
     @Bean
     public SubmitDefenseUseCase submitDefenseUseCase(DefenseRepositorySaver defenseRepositorySaver) {
         return new SubmitDefenseUseCase(defenseRepositorySaver);
+    }
+
+    @Bean
+    public FindAllDefenseUseCase findAllDefenseUseCase(DefenseRepositoryFetcher defenseRepositoryFetcher) {
+        return new FindAllDefenseUseCase(defenseRepositoryFetcher);
+    }
+
+    @Bean
+    public FindByIdDefenseUseCase findByIdDefenseUseCase(DefenseRepositoryFetcher defenseRepositoryFetcher) {
+        return new FindByIdDefenseUseCase(defenseRepositoryFetcher);
     }
 }
