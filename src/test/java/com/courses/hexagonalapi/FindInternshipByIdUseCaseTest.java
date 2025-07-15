@@ -19,7 +19,6 @@ class FindInternshipByIdUseCaseTest {
 
     @Test
     void shouldReturnInternshipWhenFound() {
-        // given
         UUID internshipId = UUID.randomUUID();
         Internship expected = new Internship(
                 internshipId,
@@ -32,10 +31,8 @@ class FindInternshipByIdUseCaseTest {
 
         when(repositoryFetcher.findById(internshipId)).thenReturn(Optional.of(expected));
 
-        // when
         Internship result = useCase.findById(internshipId);
 
-        // then
         assertNotNull(result);
         assertEquals(expected, result);
         verify(repositoryFetcher, times(1)).findById(internshipId);

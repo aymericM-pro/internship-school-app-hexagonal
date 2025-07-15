@@ -40,7 +40,6 @@ class FindAllInternshipUseCaseTest {
                 null
         );
 
-
         List<Internship> mockList = List.of(internship1, internship2);
         when(repositoryFetcher.findAll()).thenReturn(mockList);
 
