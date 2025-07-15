@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/football
+    username: football_user
+    password: football_pass
+
+server:
+  port: 8080

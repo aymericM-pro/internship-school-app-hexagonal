@@ -1,8 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/football
-    username: football_user
-    password: football_pass
   jpa:
     hibernate:
       ddl-auto: update
@@ -10,9 +6,11 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
   sql:
     init:
       mode: always
+
   web:
     resources:
       add-mappings: false

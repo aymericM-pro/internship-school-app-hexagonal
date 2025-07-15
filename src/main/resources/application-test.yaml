@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:does-not-exist
+    username: none
+    password: none
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
