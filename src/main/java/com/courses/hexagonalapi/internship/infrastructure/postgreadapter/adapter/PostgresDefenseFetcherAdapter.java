@@ -6,7 +6,6 @@ import com.courses.hexagonalapi.internship.domain.defenses.DefenseRepositoryFetc
 import com.courses.hexagonalapi.internship.domain.defenses.ErrorDefenseCode;
 import com.courses.hexagonalapi.internship.domain.internships.ErrorInternshipCode;
 import com.courses.hexagonalapi.internship.infrastructure.postgreadapter.mapper.DefenseEntityMapper;
-import com.courses.hexagonalapi.internship.infrastructure.postgreadapter.mapper.InternshipEntityMapper;
 import com.courses.hexagonalapi.internship.infrastructure.postgreadapter.repository.DefenseRepository;
 import org.springframework.stereotype.Component;
 
