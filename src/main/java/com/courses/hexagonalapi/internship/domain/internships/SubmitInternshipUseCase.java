@@ -1,4 +1,4 @@
-package com.courses.hexagonalapi.internship.domain;
+package com.courses.hexagonalapi.internship.domain.internships;
 
 import com.courses.hexagonalapi.core.BusinessException;
 import com.courses.hexagonalapi.internship.application.SubmitInternshipRequest;
@@ -26,7 +26,8 @@ public class SubmitInternshipUseCase {
                 request.title(),
                 request.startDate(),
                 request.endDate(),
-                InternshipStatus.SUBMITTED
+                InternshipStatus.SUBMITTED,
+                null
         );
 
         internshipRepositorySaver.save(internship);

@@ -1,11 +1,11 @@
 package com.courses.hexagonalapi;
 
 import com.courses.hexagonalapi.core.BusinessException;
-import com.courses.hexagonalapi.internship.domain.ErrorInternshipCode;
-import com.courses.hexagonalapi.internship.domain.FindAllInternshipUseCase;
-import com.courses.hexagonalapi.internship.domain.Internship;
-import com.courses.hexagonalapi.internship.domain.InternshipRepositoryFetcher;
-import com.courses.hexagonalapi.internship.domain.InternshipStatus;
+import com.courses.hexagonalapi.internship.domain.internships.ErrorInternshipCode;
+import com.courses.hexagonalapi.internship.domain.internships.FindAllInternshipUseCase;
+import com.courses.hexagonalapi.internship.domain.internships.Internship;
+import com.courses.hexagonalapi.internship.domain.internships.InternshipRepositoryFetcher;
+import com.courses.hexagonalapi.internship.domain.internships.InternshipStatus;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

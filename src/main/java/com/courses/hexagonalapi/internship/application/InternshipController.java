@@ -1,9 +1,9 @@
 package com.courses.hexagonalapi.internship.application;
 
-import com.courses.hexagonalapi.internship.domain.FindAllInternshipUseCase;
-import com.courses.hexagonalapi.internship.domain.FindInternshipByIdUseCase;
-import com.courses.hexagonalapi.internship.domain.Internship;
-import com.courses.hexagonalapi.internship.domain.SubmitInternshipUseCase;
+import com.courses.hexagonalapi.internship.domain.internships.FindAllInternshipUseCase;
+import com.courses.hexagonalapi.internship.domain.internships.FindInternshipByIdUseCase;
+import com.courses.hexagonalapi.internship.domain.internships.Internship;
+import com.courses.hexagonalapi.internship.domain.internships.SubmitInternshipUseCase;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

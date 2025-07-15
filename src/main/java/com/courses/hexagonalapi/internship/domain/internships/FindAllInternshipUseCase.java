@@ -1,4 +1,4 @@
-package com.courses.hexagonalapi.internship.domain;
+package com.courses.hexagonalapi.internship.domain.internships;
 
 import com.courses.hexagonalapi.core.BusinessException;
 

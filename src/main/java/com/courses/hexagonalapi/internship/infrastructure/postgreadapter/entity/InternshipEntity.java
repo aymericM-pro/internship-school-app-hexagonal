@@ -1,6 +1,7 @@
 package com.courses.hexagonalapi.internship.infrastructure.postgreadapter.entity;
 
-import com.courses.hexagonalapi.internship.domain.InternshipStatus;
+import com.courses.hexagonalapi.internship.application.DefenseController;
+import com.courses.hexagonalapi.internship.domain.internships.InternshipStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -22,6 +23,9 @@ public class InternshipEntity {
 
     @Enumerated(EnumType.STRING)
     private InternshipStatus status;
+
+    @OneToOne(mappedBy = "internship", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private DefenseEntity defense;
 
     public InternshipEntity(UUID internshipId, String title, LocalDate startDate, LocalDate endDate, InternshipStatus status) {
         this.internshipId = internshipId;
@@ -73,4 +77,13 @@ public class InternshipEntity {
     public void setStatus(InternshipStatus status) {
         this.status = status;
     }
+
+    public DefenseEntity getDefense() {
+        return defense;
+    }
+
+    public void setDefense(DefenseEntity defense) {
+        this.defense = defense;
+    }
+
 }

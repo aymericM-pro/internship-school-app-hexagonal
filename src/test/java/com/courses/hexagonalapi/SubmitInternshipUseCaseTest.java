@@ -2,7 +2,7 @@ package com.courses.hexagonalapi;
 
 import com.courses.hexagonalapi.core.BusinessException;
 import com.courses.hexagonalapi.internship.application.SubmitInternshipRequest;
-import com.courses.hexagonalapi.internship.domain.*;
+import com.courses.hexagonalapi.internship.domain.internships.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

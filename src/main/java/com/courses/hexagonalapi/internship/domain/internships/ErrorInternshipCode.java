@@ -1,6 +1,8 @@
-package com.courses.hexagonalapi.internship.domain;
+package com.courses.hexagonalapi.internship.domain.internships;
 
-public enum ErrorInternshipCode {
+import com.courses.hexagonalapi.core.ErrorCode;
+
+public enum ErrorInternshipCode implements ErrorCode {
     INTERNSHIP_NOT_FOUND(404),
     INVALID_INTERNSHIP_DATA(400),
     POSTGRES_SAVE_ERROR(500),

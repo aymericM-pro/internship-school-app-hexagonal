@@ -1,9 +1,9 @@
 package com.courses.hexagonalapi.internship.infrastructure.postgreadapter.adapter;
 
 import com.courses.hexagonalapi.core.BusinessException;
-import com.courses.hexagonalapi.internship.domain.ErrorInternshipCode;
-import com.courses.hexagonalapi.internship.domain.Internship;
-import com.courses.hexagonalapi.internship.domain.InternshipRepositoryFetcher;
+import com.courses.hexagonalapi.internship.domain.internships.ErrorInternshipCode;
+import com.courses.hexagonalapi.internship.domain.internships.Internship;
+import com.courses.hexagonalapi.internship.domain.internships.InternshipRepositoryFetcher;
 import com.courses.hexagonalapi.internship.infrastructure.postgreadapter.mapper.InternshipEntityMapper;
 import com.courses.hexagonalapi.internship.infrastructure.postgreadapter.repository.InternshipRepository;
 import org.springframework.stereotype.Component;
