@@ -27,7 +27,8 @@ class FindAllInternshipUseCaseTest {
                 "Stage A",
                 LocalDate.of(2025, 9, 1),
                 LocalDate.of(2025, 12, 1),
-                InternshipStatus.SUBMITTED
+                InternshipStatus.SUBMITTED,
+                null
         );
 
         Internship internship2 = new Internship(
@@ -35,8 +36,10 @@ class FindAllInternshipUseCaseTest {
                 "Stage B",
                 LocalDate.of(2025, 10, 1),
                 LocalDate.of(2026, 1, 15),
-                InternshipStatus.SUBMITTED
+                InternshipStatus.SUBMITTED,
+                null
         );
+
 
         List<Internship> mockList = List.of(internship1, internship2);
         when(repositoryFetcher.findAll()).thenReturn(mockList);

@@ -26,7 +26,8 @@ class FindInternshipByIdUseCaseTest {
                 "Stage Java",
                 LocalDate.of(2025, 9, 1),
                 LocalDate.of(2025, 12, 31),
-                InternshipStatus.SUBMITTED
+                InternshipStatus.SUBMITTED,
+                null
         );
 
         when(repositoryFetcher.findById(internshipId)).thenReturn(Optional.of(expected));
