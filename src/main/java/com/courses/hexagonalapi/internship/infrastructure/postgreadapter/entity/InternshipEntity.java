@@ -1,6 +1,5 @@
 package com.courses.hexagonalapi.internship.infrastructure.postgreadapter.entity;
 
-import com.courses.hexagonalapi.internship.application.DefenseController;
 import com.courses.hexagonalapi.internship.domain.internships.InternshipStatus;
 import jakarta.persistence.*;
 
@@ -50,40 +49,19 @@ public class InternshipEntity {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public LocalDate getStartDate() {
         return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
     }
 
     public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
     public InternshipStatus getStatus() {
         return status;
-    }
-
-    public void setStatus(InternshipStatus status) {
-        this.status = status;
     }
 
     public DefenseEntity getDefense() {
         return defense;
     }
-
-    public void setDefense(DefenseEntity defense) {
-        this.defense = defense;
-    }
-
 }

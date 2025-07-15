@@ -15,6 +15,7 @@ public class DefenseController {
     public DefenseController(SubmitDefenseUseCase submitDefenseUseCase) {
         this.submitDefenseUseCase = submitDefenseUseCase;
     }
+
     @PostMapping
     public ResponseEntity<Defense> createDefense(@RequestBody DefenseRequest request) {
         Defense defense = submitDefenseUseCase.saveDefense(request);

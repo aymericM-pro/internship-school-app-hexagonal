@@ -48,48 +48,24 @@ public class DefenseEntity {
         return defenseId;
     }
 
-    public void setDefenseId(UUID defenseId) {
-        this.defenseId = defenseId;
-    }
-
     public LocalDate getPreferredDate() {
         return preferredDate;
-    }
-
-    public void setPreferredDate(LocalDate preferredDate) {
-        this.preferredDate = preferredDate;
     }
 
     public String getPreferredTime() {
         return preferredTime;
     }
 
-    public void setPreferredTime(String preferredTime) {
-        this.preferredTime = preferredTime;
-    }
-
     public String getPresentationTitle() {
         return presentationTitle;
-    }
-
-    public void setPresentationTitle(String presentationTitle) {
-        this.presentationTitle = presentationTitle;
     }
 
     public String getComments() {
         return comments;
     }
 
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
     public DefenseStatus getStatus() {
         return status;
-    }
-
-    public void setStatus(DefenseStatus status) {
-        this.status = status;
     }
 
     public InternshipEntity getInternship() {
